@@ -4,19 +4,19 @@
 @scrub: #c8d7ab;        // Lch(84,24,122)
 @forest: #add19e;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
-@park: #c8facc;         // Lch(94,30,145)
+@park: #e9f4d9;         // Lch(94,30,145)
 @allotments: #c9e1bf;   // Lch(87,20,135)
 @orchard: #aedfa3; // also vineyard, plant_nursery
 @hedge: @forest;       // Lch(80,30,135)
 
 // --- "Base" landuses ---
 
-@built-up-lowzoom: #aaaaaa;
-@built-up-z11: #c0c0c0;
-@built-up-z12: #d0d0d0;
-@residential: #e0dfdf;      // Lch(89,0,0)
+@built-up-lowzoom: #d0d0d0;
+@built-up-z11: #f0eee4;
+@built-up-z12: #f0eee4;
+@residential: #f0ee4;      // Lch(89,0,0)
 @residential-line: #b9b9b9; // Lch(75,0,0)
-@retail: #ffd6d1;           // Lch(89,16,30)
+@retail: #e0dbc6;           // Lch(89,16,30)
 @retail-line: #d99c95;      // Lch(70,25,30)
 @commercial: #f2dad9;       // Lch(89,8.5,25)
 @commercial-line: #d1b2b0;  // Lch(75,12,25)
@@ -42,7 +42,7 @@
 
 @bare_ground: #eee5dc;
 @campsite: #def6c0; // also caravan_site, picnic_site
-@cemetery: #aacbaf; // also grave_yard
+@cemetery: #619e3a; // also grave_yard
 @construction: #c7c7b4; // also brownfield
 @heath: #d6d99f;
 @mud: rgba(203,177,154,0.3); // produces #e6dcd1 over @land
@@ -67,7 +67,7 @@
 @pitch: #aae0cb;           // Lch(85,22,168) also track
 @track: @pitch;
 @stadium: @leisure; // also sports_centre
-@golf_course: #b5e3b5;
+@golf_course: #88cc00;
 
 #landcover-low-zoom[zoom < 10],
 #landcover[zoom >= 10] {
