@@ -14,7 +14,7 @@
 @built-up-lowzoom: #d0d0d0;
 @built-up-z11: #f0eee4;
 @built-up-z12: #f0eee4;
-@residential: #f0ee4;      // Lch(89,0,0)
+@residential: #f0eee4;      // Lch(89,0,0)
 @residential-line: #b9b9b9; // Lch(75,0,0)
 @retail: #e0dbc6;           // Lch(89,16,30)
 @retail-line: #d99c95;      // Lch(70,25,30)
