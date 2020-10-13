@@ -1,6 +1,6 @@
 @building-fill: #d9d0c9;  // Lch(84, 5, 68)
 @building-line: darken(@building-fill, 15%);  // Lch(70, 9, 66)
-@building-low-zoom: darken(@building-fill, 4%);
+@building-low-zoom: #999999;
 
 @building-major-fill: darken(@building-fill, 10%);  // Lch(75, 8, 67)
 @building-major-line: darken(@building-major-fill, 15%);  // Lch(61, 13, 65)
@@ -11,13 +11,14 @@
 @entrance-normal: @building-line;
 
 #buildings {
-  [zoom >= 14] {
+  [zoom >= 13] {
     polygon-fill: @building-low-zoom;
+    polygon-opacity: .25;
     polygon-clip: false;
-    [zoom >= 15] {
-      polygon-fill: @building-fill;
-      line-color: @building-line;
-      line-width: .75;
+    [zoom >= 17] {
+      line-color: #808080;
+      line-width: .7;
+      line-opacity: .25;
       line-clip: false;
     }
     [amenity = 'place_of_worship'],
