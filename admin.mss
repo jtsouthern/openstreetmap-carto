@@ -458,8 +458,7 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
   [zoom >= 16] {
     text-name: "[name]";
     text-face-name: @book-fonts;
-    text-fill: @state-labels;
-    [admin_level = '6'] { text-fill: @county-labels; }
+    text-fill: @admin-boundaries;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-largest-bbox-only: false;
