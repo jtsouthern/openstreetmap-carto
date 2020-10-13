@@ -1,6 +1,6 @@
 @placenames: #2b2b2b;
 @placenames-light: #777777;
-@country-labels: #918378
+@country-labels: #918378;
 @state-labels: #5a5a5a;
 
 .country {
