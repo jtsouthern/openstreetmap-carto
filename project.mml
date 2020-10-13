@@ -44,7 +44,7 @@ Stylesheet:
   - water-features.mss
   - road-colors-generated.mss
   - roads.mss
-  - power.mss
+ #- power.mss
   - placenames.mss
   - buildings.mss
   - stations.mss
