@@ -119,7 +119,7 @@
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
   }
-
+/*
   [feature = 'landuse_quarry'][zoom >= 10] {
     polygon-fill: @quarry;
     polygon-pattern-file: url('symbols/quarry.svg');
@@ -130,7 +130,7 @@
     [way_pixels >= 4]  { polygon-pattern-gamma: 0.75; }
     [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
   }
-
+*/
   [feature = 'landuse_vineyard'] {
     [zoom >= 5] {
       polygon-fill: @orchard;
@@ -173,7 +173,7 @@
       [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
     }
   }
-
+/*
   [feature = 'landuse_plant_nursery'] {
     [zoom >= 10] {
       polygon-fill: @orchard;
@@ -187,7 +187,7 @@
       [way_pixels >= 64] { polygon-pattern-gamma: 0.3;  }
     }
   }
-
+*/
   [feature = 'landuse_cemetery'],
   [feature = 'amenity_grave_yard'] {
     [zoom >= 10] {
@@ -228,7 +228,7 @@
     line-width: 3;
     line-opacity: 0.329;
   }
-
+/*
   [feature = 'landuse_residential'][zoom >= 8] {
     polygon-fill: @built-up-lowzoom;
     [zoom >= 11] { polygon-fill: @built-up-z11; }
@@ -244,7 +244,7 @@
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
-
+*/
   [feature = 'landuse_garages'][zoom >= 13] {
     polygon-fill: @garages;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
@@ -289,7 +289,7 @@
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
-
+/*
   [feature = 'landuse_allotments'] {
     [zoom >= 10] {
       polygon-fill: @allotments;
@@ -310,7 +310,10 @@
       }
     }
   }
-
+*/
+  // This color is slightly different from @land-color (#faf8ed).
+  [feature = 'natural_coastline'] { polygon-fill: #f6f3e9; }
+  
   [feature = 'landuse_forest'],
   [feature = 'natural_wood'] {
     [zoom >= 5] {
@@ -374,7 +377,7 @@
       }
     }
   }
-
+/*
   [feature = 'landuse_industrial'][zoom >= 8] {
     polygon-fill: @built-up-lowzoom;
     [zoom >= 11] { polygon-fill: @built-up-z11; }
@@ -390,7 +393,7 @@
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
-
+*/
   [feature = 'man_made_works'][zoom >= 16] {
     line-width: .5;
     line-color: @industrial-line;
@@ -455,7 +458,7 @@
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
-
+/*
   [feature = 'landuse_commercial'][zoom >= 8] {
     polygon-fill: @built-up-lowzoom;
     [zoom >= 11] { polygon-fill: @built-up-z11; }
@@ -471,7 +474,7 @@
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
-
+*/
   [feature = 'landuse_brownfield'],
   [feature = 'landuse_construction'] {
     [zoom >= 10] {
@@ -480,7 +483,7 @@
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
   }
-
+/*
   [feature = 'landuse_landfill'] {
     [zoom >= 10] {
       polygon-fill: #b6b592;
@@ -488,7 +491,7 @@
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
   }
-
+*/
   [feature = 'natural_bare_rock'][zoom >= 5] {
     polygon-fill: @bare_ground;
     polygon-pattern-file: url('symbols/rock_overlay.png');
@@ -744,10 +747,12 @@
     polygon-pattern-file: url('symbols/beach.png');
     polygon-pattern-alignment: global;
   }
+/*
   [int_wetland != null][zoom >= 5] {
     polygon-pattern-file: url('symbols/wetland.png');
     polygon-pattern-alignment: global;
   }
+*/  
   [natural = 'reef'][zoom >= 10] {
     polygon-pattern-file: url('symbols/reef.png');
     polygon-pattern-alignment: global;
@@ -816,20 +821,8 @@
   [landuse = 'military'][zoom >= 8][way_pixels > 900],
   [landuse = 'military'][zoom >= 13],
   [military = 'danger_area'][zoom >= 9] {
-    polygon-pattern-file: url('symbols/military_red_hatch.png');
-    polygon-pattern-alignment: global;
-    line-color: @military;
-    line-opacity: 0.24;
-    line-width: 1.0;
-    line-offset: -0.5;
-    [zoom >= 15] {
-      [military = 'danger_area'][zoom >= 9] {
-        polygon-pattern-file: url('symbols/danger_red_hatch.png');
-        line-opacity: 0.2;
-      }
-      line-width: 2;
-      line-offset: -1.0;
-    }
+    polygon-fill: #7a941e;
+    polygon-opacity: .1;
   }
 }
 
