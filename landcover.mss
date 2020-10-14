@@ -162,6 +162,7 @@
   [feature = 'leisure_garden'] {
     [zoom >= 10] {
       polygon-fill: @grass;
+      polygon-opacity: .15;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
@@ -190,8 +191,9 @@
 */
   [feature = 'landuse_cemetery'],
   [feature = 'amenity_grave_yard'] {
-    [zoom >= 10] {
+    [zoom >= 12] {
       polygon-fill: @cemetery;
+      polygon-opacity: .25;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
@@ -254,6 +256,7 @@
   [feature = 'leisure_park'] {
     [zoom >= 10] {
       polygon-fill: @park;
+      polygon-opacity: .15;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
@@ -272,6 +275,7 @@
   [feature = 'leisure_dog_park'] {
     [zoom >= 10] {
       polygon-fill: @leisure;
+      polygon-opacity: .15;    
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
@@ -283,9 +287,17 @@
     }
   }
 
-  [feature = 'leisure_golf_course'][zoom >= 10],
+  [feature = 'leisure_golf_course'][zoom >= 12] {
+    polygon-fill: @golf_course;
+    polygon-opacity: .2;
+    [zoom >= 15] { polygon-opacity: .25 }
+    [way_pixels >= 4]  { polygon-gamma: 0.75; }
+    [way_pixels >= 64] { polygon-gamma: 0.3;  }
+  }
+  
   [feature = 'leisure_miniature_golf'][zoom >= 15] {
     polygon-fill: @golf_course;
+    polygon-opacity: .2;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
@@ -313,11 +325,13 @@
 */
   // This color is slightly different from @land-color (#faf8ed).
   [feature = 'natural_coastline'] { polygon-fill: #f6f3e9; }
-  
+
+  [feature = 'landuse_military'],
   [feature = 'landuse_forest'],
   [feature = 'natural_wood'] {
-    [zoom >= 5] {
+    [zoom >= 8] {
       polygon-fill: @forest;
+      polygon-opacity: .25;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
     }
@@ -354,6 +368,7 @@
   [feature = 'landuse_grass'][zoom >= 5],
   [feature = 'landuse_village_green'][zoom >= 5] {
     polygon-fill: @grass;
+    polygon-opacity: .15;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
@@ -492,7 +507,13 @@
     }
   }
 */
-  [feature = 'natural_bare_rock'][zoom >= 5] {
+  [feature = 'landuse_salt_pond'][zoom >= 10] {
+    polygon-fill: @water-color;
+    [way_pixels >= 4]  { polygon-gamma: 0.75; }
+    [way_pixels >= 64] { polygon-gamma: 0.3;  }
+  }
+  
+  [feature = 'natural_bare_rock'][zoom >= 10] {
     polygon-fill: @bare_ground;
     polygon-pattern-file: url('symbols/rock_overlay.png');
     [way_pixels >= 4] {
@@ -507,7 +528,7 @@
 
   [feature = 'natural_scree'],
   [feature = 'natural_shingle'] {
-    [zoom >= 5] {
+    [zoom >= 10] {
       polygon-fill: @bare_ground;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
@@ -519,37 +540,37 @@
     }
   }
 
-  [feature = 'natural_sand'][zoom >= 5] {
+  [feature = 'natural_sand'][zoom >= 10] {
     polygon-fill: @sand;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
 
-  [feature = 'natural_heath'][zoom >= 5] {
+  [feature = 'natural_heath'][zoom >= 10] {
     polygon-fill: @heath;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
 
-  [feature = 'natural_scrub'][zoom >= 5] {
+  [feature = 'natural_scrub'][zoom >= 10] {
     polygon-fill: @scrub;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
 
-  [feature = 'wetland_swamp'][zoom >= 5] {
+  [feature = 'wetland_swamp'][zoom >= 10] {
     polygon-fill: @forest;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
 
-  [feature = 'wetland_mangrove'][zoom >= 5] {
+  [feature = 'wetland_mangrove'][zoom >= 10] {
     polygon-fill: @scrub;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
   }
 
-  [feature = 'wetland_reedbed'][zoom >= 5] {
+  [feature = 'wetland_reedbed'][zoom >= 10] {
     polygon-fill: @grass;
     [way_pixels >= 4]  { polygon-gamma: 0.75; }
     [way_pixels >= 64] { polygon-gamma: 0.3;  }
@@ -557,7 +578,7 @@
 
   [feature = 'wetland_bog'],
   [feature = 'wetland_string_bog'] {
-    [zoom >= 5] {
+    [zoom >= 10] {
       polygon-fill: @heath;
       [way_pixels >= 4]  { polygon-gamma: 0.75; }
       [way_pixels >= 64] { polygon-gamma: 0.3;  }
@@ -568,7 +589,7 @@
   [feature = 'wetland_fen'],
   [feature = 'wetland_saltmarsh'],
   [feature = 'wetland_marsh'] {
-    [zoom >= 5] {
+    [zoom >= 10] {
       polygon-fill: @grass;
       [feature = 'wetland_saltmarsh'][zoom >= 13] {
         polygon-pattern-file: url('symbols/salt-dots-2.png');
@@ -582,11 +603,25 @@
   }
 
   [feature = 'amenity_hospital'],
-  [feature = 'amenity_clinic'],
+  [feature = 'amenity_clinic'] {
+    [zoom >= 12] {
+      polygon-fill: #c6e0e0;
+      [way_pixels >= 4]  { polygon-gamma: 0.75; }
+      [way_pixels >= 64] { polygon-gamma: 0.3;  }
+    }
+  }
+
   [feature = 'amenity_university'],
   [feature = 'amenity_college'],
   [feature = 'amenity_school'],
-  [feature = 'amenity_kindergarten'],
+  [feature = 'amenity_kindergarten'] {
+    [zoom >= 13] {
+      polygon-fill: #e0dbc6;
+      [way_pixels >= 4]  { polygon-gamma: 0.75; }
+      [way_pixels >= 64] { polygon-gamma: 0.3;  }
+    }
+  }
+  
   [feature = 'amenity_community_centre'],
   [feature = 'amenity_social_facility'],
   [feature = 'amenity_arts_centre'] {
@@ -680,6 +715,7 @@
   }
 
   [feature = 'leisure_sports_centre'],
+  [feature = 'leisure_water_park'],
   [feature = 'leisure_stadium'] {
     [zoom >= 10] {
       polygon-fill: @stadium;
@@ -743,16 +779,16 @@
     }
   }
 
-  [natural = 'sand'][zoom >= 5] {
+  [natural = 'sand'][zoom >= 10] {
     polygon-pattern-file: url('symbols/beach.png');
     polygon-pattern-alignment: global;
   }
-/*
-  [int_wetland != null][zoom >= 5] {
+
+  [int_wetland != null][zoom >= 10] {
     polygon-pattern-file: url('symbols/wetland.png');
     polygon-pattern-alignment: global;
   }
-*/  
+
   [natural = 'reef'][zoom >= 10] {
     polygon-pattern-file: url('symbols/reef.png');
     polygon-pattern-alignment: global;
