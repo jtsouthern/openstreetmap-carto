@@ -5,7 +5,7 @@
 @county-labels: #5a5a5a;
 
 #country-names {
-  [zoom >= 3][zoom < 5][way_pixels > 1000],
+  [zoom >= 4][zoom < 5][way_pixels > 3000],
   [zoom >= 5][zoom < 8][way_pixels > 10000] {
     text-name: "[name]";
     text-size: 10;
@@ -154,7 +154,7 @@
 
 #placenames-medium::high-importance {
   [category = 1][zoom < 14] {
-    [zoom >= 4][zoom < 5][score >= 3000000],
+    [zoom >= 4][zoom < 6][score >= 3000000],
     [zoom >= 6][zoom < 8][score >= 400000] {
       shield-file: url('symbols/place/place-4.svg');
       shield-text-dx: 4;
@@ -229,7 +229,8 @@
 
 #placenames-medium::medium-importance {
   [category = 1][score < 400000][zoom < 15] {
-    [zoom >= 5][zoom < 8][score >= 70000],
+    [zoom >= 5][zoom < 6][score >= 250000],
+    [zoom >= 6][zoom < 8][score >= 70000],
     [zoom >= 7][zoom < 8] {
       shield-file: url('symbols/place/place-4.svg');
       shield-text-dx: 4;
